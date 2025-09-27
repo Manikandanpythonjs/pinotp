@@ -1,6 +1,6 @@
 {
   "name": "@mani_kan_dan_al/pinotp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A modern, customizable React OTP / PIN input component",
   "type": "module",
   "main": "dist/index.umd.js",
