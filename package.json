@@ -1,0 +1,65 @@
+{
+  "name": "@mani_kan_dan_al/pinotp",
+  "version": "0.1.0",
+  "description": "A modern, customizable React OTP / PIN input component",
+  "type": "module",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "default": "./dist/index.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "otp",
+    "pin",
+    "otp-input",
+    "pin-input",
+    "input-component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manikandanpythonjs/pinotp.git"
+  },
+  "author": "Manikandan <manikandan@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Manikandanpythonjs/pinotp/issues"
+  },
+  "homepage": "https://github.com/Manikandanpythonjs/pinotp#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react-swc": "^4.1.0",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "vite": "^7.1.7",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
