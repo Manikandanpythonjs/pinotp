@@ -51,7 +51,7 @@ npm run build; npm publish --access public
 
 Author
 
-Manikandan <manikandan@example.com>
+Manikandan
 
 Notes
 
