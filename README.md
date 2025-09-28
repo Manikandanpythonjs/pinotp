@@ -24,7 +24,7 @@ Import the component in your React app. The package exports a default `OTPInput`
 
 ```jsx
 import React from "react";
-import OTPInput from "@mani_kan_dan_al/pinotp";
+import { OTPInput } from "@mani_kan_dan_al/pinotp";
 
 export default function Example() {
   const [value, setValue] = React.useState("");
@@ -36,7 +36,7 @@ export default function Example() {
 
 ```jsx
 import React, { useState } from "react";
-import OTPInput from "@mani_kan_dan_al/pinotp";
+import { OTPInput } from "@mani_kan_dan_al/pinotp";
 
 export default function FullOTPExample() {
   const [otp, setOtp] = useState("");
