@@ -20,6 +20,8 @@ Usage
 
 Import the component in your React app. The package exports a default `OTPInput` component.
 
+### Minimal Example
+
 ```jsx
 import React from "react";
 import OTPInput from "@mani_kan_dan_al/pinotp";
@@ -30,23 +32,73 @@ export default function Example() {
 }
 ```
 
-Build & development
+### Full Example with All Main Props
 
-This repo uses Vite for local development. Common commands:
+```jsx
+import React, { useState } from "react";
+import OTPInput from "@mani_kan_dan_al/pinotp";
 
-```bash
-npm install
-npm run dev      # start dev server
-npm run build    # build distributable into ./dist
-```
+export default function FullOTPExample() {
+  const [otp, setOtp] = useState("");
+  const [error, setError] = useState(false);
+  const [completed, setCompleted] = useState(false);
 
-Publishing
+  const handleChange = (val) => {
+    setOtp(val);
+    setError(false);
+    setCompleted(false);
+  };
 
-Before publishing, ensure the `author` and `repository.url` fields in `package.json` are correct. The package is scoped as `@mani_kan_dan_al/pinotp`; to publish publicly run:
+  const handleComplete = (val) => {
+    setCompleted(true);
+    // Example: check OTP value
+    if (val !== "123456") {
+      setError(true);
+    } else {
+      alert("OTP correct!");
+    }
+  };
 
-```bash
-# build and publish (scoped packages are published public with --access public)
-npm run build; npm publish --access public
+  return (
+    <div style={{ maxWidth: 400, margin: "2rem auto", textAlign: "center" }}>
+      <h2>Enter OTP</h2>
+      <OTPInput
+        length={6}
+        value={otp}
+        onChange={handleChange}
+        onComplete={handleComplete}
+        autoFocus={true}
+        mask={false}
+        shape="box" // box | circle | underline
+        size={48}
+        gap={10}
+        colors={{
+          border: "#ccc",
+          focus: "#0070f3",
+          text: "#222",
+          background: "#fff",
+          error: "#e00",
+        }}
+        error={error}
+      />
+      {error && (
+        <div style={{ color: "#e00", marginTop: 8 }}>
+          Invalid OTP. Try 123456.
+        </div>
+      )}
+      {completed && !error && (
+        <div style={{ color: "#090", marginTop: 8 }}>OTP complete!</div>
+      )}
+      <button
+        style={{ marginTop: 16 }}
+        onClick={() => handleComplete(otp)}
+        disabled={otp.length !== 6}
+      >
+        Submit
+      </button>
+    </div>
+  );
+}
 ```
 
 Author

@@ -36,7 +36,7 @@
     "type": "git",
     "url": "git+https://github.com/Manikandanpythonjs/pinotp.git"
   },
-  "author": "Manikandan <manikandan@example.com>",
+  "author": "Manikandan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Manikandanpythonjs/pinotp/issues"
